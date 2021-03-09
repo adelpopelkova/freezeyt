@@ -5,7 +5,7 @@
 tak jsme na úvod zařadili info o projektu a krátké demo jeho použití.
 
 Abychom shrnuli o čem projekt je: první potřebujeme vytvořit webovou aplikaci
-(třeba ve webovém fremeworku [Flask](přidat link?)).
+(třeba ve webovém fremeworku [Flask](https://flask.palletsprojects.com/en/1.1.x/).
 Příkazem `flask run` se spustí jednoduchý server.
 Chceme-li tyto stránky publikovat, existuje mnoho možností, jak to udělat.
 Jedna z těchto možností je nasadit ji na server statických stránek.
@@ -56,7 +56,7 @@ Je tam také interní funkce `_add_extra_pages`, která přidá stránky,
 na které nevedou žádné odkazy z aplikace.
 
 Na chvíli jsme se zastavili u WSGI.
-Je to rozhraní, které je definováno v [PEP 3333](to do dodat link).
+Je to rozhraní, které je definováno v [PEP 3333](https://www.python.org/dev/peps/pep-3333/).
 Všechny Pythonní webové aplikace by měly být kompatibilní s tímto rozhraním.
 My vlastně píšeme nový server, náš freezer musí být schopen spolupracovat
 s tímto rozhraním.
@@ -85,7 +85,7 @@ V souboru *util.py* jsou pomocné funkce a to je veškerý kód. :tada:
 
 ### Testy
 Většina testů se přidává spolu s novou funkcionalitou,
-dle Test Driven Developement [TDD](todo link)
+dle Test Driven Developement [TDD](https://developer.ibm.com/devpractices/software-development/articles/5-steps-of-test-driven-development/)
 Testy jako např. `test_check_mimetype` kontrolují jednu funkci.
 Důležité jsou testy v `test_expected_output`, tyto testy testují kompletní
 zmrazení aplikace.
@@ -97,7 +97,7 @@ V těchto testech je adresář fixtures a v něm jsou aplikace a očekávaný v�
 Krom samotného projektu máme i blog, který slouží částečně i jako dokumentace.
 Hledá se v něm snáze než ve videích na YouTube.
 Ve článcích jsou shrnutí ze srazů.
-Blog sídlí (zde)[přidat odkaz na blog] na GH pages.
+Blog sídlí [zde](../) na GH pages.
 Nasazení blogu se děje automaticky.
 Články se posílají přes PR na GitHub.
 Články přijdou do adresáře `freezeyt_blog/articles`.
@@ -109,7 +109,7 @@ Poté, co se tento commit pushne do masteru, tak se blog publikuje.
 
 Když na GitHub pošleme PR, tak na něm GH pustí testy.
 Testujema na 4 verzích Pythonu (3.6, 3.7, 3.8 a 3.9),
-pak tam jsou ještě testy s (Pyflakes)[link?],
+pak tam jsou ještě testy s Pyflakes,
 které kontrolují většinou zapomenuté importy.
 Dále se automaticky zamrazí a publikuje blog.  
 
@@ -127,7 +127,8 @@ který slouží pro to, abychom testy mohly spustit na více verzích Pythonu.
 ## TODO nadpis
 Na chvíli jsme se pozastavili u toho, jak se píší články na blog.
 (Články na blog klidně přidávejte, Pull Requesty jsou velice vítány. :wink:)
-Pokud nějaký článek píšete/chcete napsat, hlašte se (zde)[link na GH issue] nebo na Slacku.
+Pokud nějaký článek píšete/chcete napsat,
+hlašte se [zde](https://github.com/encukou/freezeyt/issues/1) nebo na Slacku.
 
 Informace o tom, co všechno se dá nastavit v konfiiguraci by měla být napsána
 v README (chybí-li tam něco, určitě pošlete PR s opravou, nebo otevřte issue.)
@@ -138,9 +139,9 @@ Takovými stránkami by mohly být například přesměrovávací stránky.
 Dále můžeme specifikovat extra soubory typu `.nojekyll` apod.
 
 ## Jak dostat Flask app z defaultního Flask serveru?
-Chceme-li dostat Flask aplikaci z defoultního Flask serveru,
+Chceme-li dostat Flask aplikaci z defaultního Flask serveru,
 budeme ji muset nainstalovat.
-Poté si vytvoříme (virtuální prostředí)[todo link na začátečnický nebo pokročilý kurz].
+Poté si vytvoříme [virtuální prostředí](https://naucse.python.cz/course/mi-pyt/fast-track/install/).
 V příkazové řádce zadáme (na Windows místo `export` použijte `set`):
 ```shell
 $ export FLASK_APP=app.py
@@ -179,10 +180,11 @@ Ten jsme začlenili v průběhu ukázky GH actions.
 ### Rozepsané články na blog
 Dále byly na blog přidány historické draft PRs z předchozích srazů.
 Rozepsané články jsou lepší než nic.
-Po začlenění PR se čláky za chvíli objeví na (blogu)[link?].
+Po začlenění PR se články za chvíli objeví na [blogu](../).
 
 ### Odebrní WSGI demo
-Demo aplikace pro rozhraní WSGI už v repozitáři není potřeba, a navíc, celý její kód je v (článku z prvního srazu)[přidat link].
+Demo aplikace pro rozhraní WSGI už v repozitáři není potřeba, a navíc
+celý její kód je v [článku z prvního srazu](/meeting01).
 
 ### Možnost přidat extra soubory jako base64 nebo cestu k souboru
 Nově bude soubory navíc specifikovat jako cestu, odkud se to má zkopírovat
@@ -235,7 +237,7 @@ První problém byl způsobený verzí Pytestu, to opravuje specifikace v requir
 Druhý problém je ve WSGI static middleware,
 to se vyřeší to až budeme umět kopírovat statické soubory.
 
-Příští týden zaačíná týmový začátečnický kurz Pythonu, takže se příště sejdeme v úterý.
+Příští týden začíná týmový začátečnický kurz Pythonu, takže se příště sejdeme v úterý.
 
-> Záznam ze srazu [zde](Add link).
+> Záznam ze srazu [zde](https://youtu.be/RKRogH-NepY).
 > Více informací o projektu [zde](https://tinyurl.com/freezeyt).
